@@ -1,34 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] InputAction movement;
-    void Start()
-    {
-        
-    }
-
-    void OnEnable()
-    {
-        movement.Enable();
-    }
-
-    void OnDisable()
-    {
-        movement.Disable();
-    }
     void Update()
     {
-        float horizontalThrow = movement.ReadValue<Vector2>().x;
-        float verticalThrow = movement.ReadValue<Vector2>().y;
+        float xThrow = Input.GetAxis("Horizontal");
+        float yThrow = Input.GetAxis("Vertical");
 
-        //float horizontalThrow = Input.GetAxis("Horizontal");
-        Debug.Log(horizontalThrow);
+        float xOffset = .1f;
+        float newXPos = transform.localPosition.x + xOffset;
 
-        //float verticalThrow = Input.GetAxis("Vertical");
-        Debug.Log(verticalThrow);
+        transform.localPosition = new Vector3(newXPos, transform.localPosition.y, transform.localPosition.z);
     }
 }
