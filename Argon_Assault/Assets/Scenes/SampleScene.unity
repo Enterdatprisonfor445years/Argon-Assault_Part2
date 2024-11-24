@@ -808,6 +808,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1707986102}
     m_Modifications:
     - target: {fileID: 247947344490958093, guid: a2bfdb35cc0df794f8a2da8b5d048aaa, type: 3}
+      propertyPath: controlSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 247947344490958093, guid: a2bfdb35cc0df794f8a2da8b5d048aaa, type: 3}
       propertyPath: movement.m_SingletonActionBindings.Array.size
       value: 5
       objectReference: {fileID: 0}
